@@ -1,0 +1,7 @@
+.build*.log
+.ghc.*
+dist/
+dist-newstyle/
+sekant*.tar.gz
+sekant*.src.rpm
+.sekant/

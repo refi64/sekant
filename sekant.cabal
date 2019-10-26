@@ -1,0 +1,41 @@
+-- This Source Code Form is subject to the terms of the Mozilla Public
+-- License, v. 2.0. If a copy of the MPL was not distributed with this
+-- file, You can obtain one at https://mozilla.org/MPL/2.0/.
+
+name:                sekant
+version:             0.1.0.0
+synopsis:            A simple SELinux helper
+description:         sekant is a simple SELinux helper tool for building policies and
+                     debugging denials.
+homepage:            https://github.com/refi64/sekant
+license:             MPL-2.0
+license-file:        LICENSE
+author:              Ryan Gonzalez
+maintainer:          rymg19@gmail.com
+-- copyright:
+-- category:
+build-type:          Simple
+extra-source-files:  ChangeLog.md
+                    ,README.md
+cabal-version:       >=1.10
+
+executable sekant
+  main-is:             Main.hs
+  other-modules:        Sekant.Command.Audit
+                      , Sekant.Command.Local
+                      , Sekant.Output
+                      , Sekant.Run
+                      , Sekant.Shared
+  default-extensions: FlexibleContexts, LambdaCase
+  build-depends:        ansi-wl-pprint
+                      , base >=4.11 && <4.13
+                      , directory
+                      , extra
+                      , mtl
+                      , optparse-applicative
+                      , process
+                      , shake
+                      , terminal-size
+                      , unix
+  hs-source-dirs:      src
+  default-language:    Haskell2010
